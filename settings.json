@@ -1,0 +1,90 @@
+{
+  "outputStyle": "concise",
+  "permissions": {
+    "deny": [
+      "**/*.env*",
+      "**/.env*",
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/coverage/**",
+      "**/.next/**",
+      "**/.nuxt/**",
+      "**/logs/**",
+      "**/*.log",
+      "**/secrets/**",
+      "**/.secrets/**",
+      "**/keys/**",
+      "**/.ssh/**",
+      "**/certificates/**",
+      "**/*.pem",
+      "**/*.key",
+      "**/*.crt"
+    ]
+  },
+  "customCommands": {
+    "quick-commit": "git add . && git commit -m",
+    "backup": "git add . && git commit -m 'Auto backup: $(date)' && git push",
+    "status": "git status && git log --oneline -5",
+    "sync": "git pull && git push",
+    "new-project": "bash ~/Claude/scripts/setup-project.sh",
+    "setup-tokens": "bash ~/Claude/scripts/setup-github-token.sh",
+    "clean": "git clean -fd && git reset --hard",
+    "branches": "git branch -a && echo '---' && git status",
+    "deps": "npm install || pip install -r requirements.txt || bundle install",
+    "test-quick": "npm test -- --watchAll=false || python -m pytest || bundle exec rspec",
+    "build": "npm run build || python setup.py build || make build",
+    "dev": "npm run dev || python manage.py runserver || bundle exec rails server",
+    "update-foundation": "cd ~/Claude && git pull && echo 'Foundation updated!'",
+    "format": "npx prettier --write . || black . || gofmt -w .",
+    "lint": "npm run lint || flake8 . || golangci-lint run",
+    "security": "npm audit || safety check || gosec ./...",
+    "logs": "tail -f *.log | head -50",
+    "ports": "netstat -tlnp | grep LISTEN | head -20",
+    "size": "du -sh . && find . -name '*.log' -exec du -sh {} \\;",
+    "search": "grep -r --exclude-dir=node_modules --exclude-dir=.git",
+    "pr": "git push && gh pr create --draft --title '$(git log -1 --pretty=%s)'",
+    "hotfix": "git checkout -b hotfix/$(date +%Y%m%d-%H%M) && git add . && git commit -m 'Hotfix: $1'",
+    "deploy-check": "npm run build && npm test && echo 'Ready for deployment'"
+  },
+  "hooks": {
+    "project-open": [
+      "echo 'Claude Code session started at $(date)'",
+      "git status"
+    ]
+  },
+  "tools": {
+    "Bash": { "enabled": true },
+    "Read": { "enabled": true },
+    "Write": { "enabled": true },
+    "Edit": { "enabled": true },
+    "Glob": { "enabled": true },
+    "Grep": { "enabled": true },
+    "Task": { "enabled": true },
+    "TodoWrite": { "enabled": true }
+  },
+  "memory": {
+    "maxTokens": 8000
+  },
+  "mcpServers": {
+    "github-global": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "filesystem-global": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "--allowed-directory", "~"]
+    },
+    "web-search": {
+      "command": "npx", 
+      "args": ["@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    }
+  }
+}

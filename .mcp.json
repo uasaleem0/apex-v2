@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "foundation-docs": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "--allowed-directory", "~/Claude/docs"],
+      "env": {}
+    },
+    "system-monitor": {
+      "command": "npx", 
+      "args": ["@modelcontextprotocol/server-sqlite", "--db-path", "~/Claude/.system-metrics.db"],
+      "env": {}
+    }
+  }
+}

@@ -1,0 +1,111 @@
+# Claude Code Foundation Repository - .gitignore
+# This controls what gets shared vs what stays private
+
+# =============================================================================
+# EXCLUDE: Sensitive Information (Keep Private)
+# =============================================================================
+
+# Tokens and Credentials (NEVER commit these)
+.env*
+*.token
+*_TOKEN*
+credentials.json
+.credentials*
+auth.json
+api-keys.json
+
+# Personal Information
+**/personal-*
+**/private-*
+userID.json
+
+# =============================================================================
+# EXCLUDE: Temporary & Generated Files
+# =============================================================================
+
+# OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+temp/
+
+# =============================================================================
+# EXCLUDE: Project-Specific Content (Goes in individual project repos)
+# =============================================================================
+
+# Individual projects (these have their own repos)
+projects/*/
+
+# Project-specific overrides
+projects.local.json
+
+# =============================================================================
+# INCLUDE: Foundation Content (What Gets Shared)
+# =============================================================================
+
+# Global Configuration
+!settings.json
+!CLAUDE.md
+!README.md
+
+# Global Agents
+!agents/
+!agents/**
+
+# Setup Scripts
+!scripts/
+!scripts/**
+
+# Documentation
+!docs/
+!docs/**
+!*.md
+
+# Installation helpers
+!install-*
+!setup-*
+
+# =============================================================================
+# SPECIAL: Template Files (Include but mark as templates)
+# =============================================================================
+
+# Include template files but exclude actual tokens
+!*.template
+!*.example
+!env.template
+
+# =============================================================================
+# Notes for Users
+# =============================================================================
+# 
+# INCLUDED IN REPO (shared across PCs):
+# - Global settings and preferences
+# - Universal subagents
+# - Setup automation scripts  
+# - Documentation and guides
+# - Installation helpers
+#
+# EXCLUDED FROM REPO (stays private):
+# - API tokens and credentials
+# - Personal information
+# - Individual project code
+# - Temporary files
+# - OS-specific files
+#
+# This ensures your foundation is portable but keeps sensitive info private.
+# =============================================================================
