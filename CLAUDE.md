@@ -32,11 +32,39 @@
 - Run tests after significant changes
 - Use specialized subagents for different task types
 
-## Common Commands to Remember
-- `npm run lint` - Check and fix code style
-- `npm run typecheck` - Verify TypeScript types
-- `npm test` - Run test suite
-- `git status` - Check repository state and changes
+## Foundation-Specific Commands
+- `claude new-project <name> <type>` - Create new project with full setup
+- `claude setup-tokens` - Interactive GitHub token configuration
+- `claude update-foundation` - Update global foundation settings
+- `./install-foundation.sh` - Install foundation on new PC
+- Common development commands defined in settings.json:
+  - `claude quick-commit "message"` - Add, commit with message
+  - `claude backup` - Auto backup with timestamp
+  - `claude sync` - Pull and push changes
+  - `claude status` - Git status + recent commits
+
+## Architecture Overview
+This foundation uses a two-repository strategy:
+- **Foundation repo** (`~/Claude/`): Global agents, settings, scripts
+- **Project repos** (`~/projects/`): Individual codebases with project-specific context
+
+### Available Global Agents
+- `general-debugger` - Cross-language debugging and error analysis
+- `performance-optimizer` - Algorithm and resource optimization
+- `security-analyzer` - Vulnerability analysis and OWASP compliance  
+- `test-generator` - Comprehensive test suite generation
+
+### Project Creation Workflow
+1. `claude new-project <name> <type>` creates full structure
+2. Auto-generates documentation, agents, and settings
+3. Initializes Git repo and optionally creates GitHub repo
+4. Includes hooks for automated quality checks
+
+## MCP Servers Configured
+- GitHub integration with personal access token
+- Filesystem access for home directory
+- Web search via Brave API (when configured)
+- Project-specific SQLite and filesystem servers
 
 ## Personal Notes
 This configuration applies to ALL my projects. Project-specific instructions should go in each project's CLAUDE.md file.
