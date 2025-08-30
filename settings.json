@@ -1,7 +1,40 @@
 {
   "outputStyle": "concise",
   "permissions": {
+    "allow": [
+      "Bash(rg:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git checkout -b:*)",
+      "Bash(git branch:*)",
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run:*)",
+      "Bash(npx:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(pytest:*)",
+      "Bash(python:*)",
+      "Bash(node:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh pr view:*)",
+      "Bash(mkdir:*)",
+      "Bash(touch:*)",
+      "Bash(chmod +x:*)"
+    ],
     "deny": [
+      "Bash(rm:*)",
+      "Bash(sudo:*)",
+      "Bash(git push origin main:*)",
+      "Bash(git push origin master:*)",
+      "Bash(docker:*)",
+      "Bash(wget:*)",
+      "Bash(curl:*)",
       "**/*.env*",
       "**/.env*",
       "**/node_modules/**",
@@ -10,7 +43,6 @@
       "**/build/**",
       "**/coverage/**",
       "**/.next/**",
-      "**/.nuxt/**",
       "**/logs/**",
       "**/*.log",
       "**/secrets/**",
@@ -46,12 +78,52 @@
     "search": "grep -r --exclude-dir=node_modules --exclude-dir=.git",
     "pr": "git push && gh pr create --draft --title '$(git log -1 --pretty=%s)'",
     "hotfix": "git checkout -b hotfix/$(date +%Y%m%d-%H%M) && git add . && git commit -m 'Hotfix: $1'",
-    "deploy-check": "npm run build && npm test && echo 'Ready for deployment'"
+    "deploy-check": "npm run build && npm test && echo 'Ready for deployment'",
+    "primer": "echo '=== PRIMER: Building Project Context ===' && tree -a -I 'node_modules|.git' && echo '=== Reading Key Files ===' && cat CLAUDE.md 2>/dev/null || echo 'No CLAUDE.md found' && cat README.md 2>/dev/null || echo 'No README.md found'",
+    "validate": "echo '=== VALIDATION: Running All Checks ===' && (npm run lint 2>/dev/null || echo 'No lint script') && (npm run typecheck 2>/dev/null || echo 'No typecheck script') && (npm test 2>/dev/null || python -m pytest 2>/dev/null || echo 'No tests found') && echo '=== Validation Complete ==='",
+    "security-scan": "echo '=== SECURITY SCAN ===' && (npm audit 2>/dev/null || echo 'No npm audit available') && rg -i 'password|secret|key|token' --type-not=md --type-not=json 2>/dev/null || echo 'No obvious secrets found'",
+    "fix-issue": "echo 'Usage: claude fix-issue <issue-number>' && echo 'This will fetch GitHub issue and create fix branch'"
   },
   "hooks": {
     "project-open": [
       "echo 'Claude Code session started at $(date)'",
-      "git status"
+      "git status",
+      "echo 'Remember: Follow the 10 Hard Rules in CLAUDE.md'"
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"$(date): File edited - $1\" >> ~/.claude/logs/edits.log 2>/dev/null || mkdir -p ~/.claude/logs && echo \"$(date): File edited - $1\" >> ~/.claude/logs/edits.log",
+            "description": "Log all file edits for tracking"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'input=$(cat); cmd=$(echo \"$input\" | jq -r \".tool_input.command // empty\" 2>/dev/null || echo \"$input\"); if [[ \"$cmd\" =~ (rm|delete).*(\\*|\\.env|secret|key|password) ]]; then echo \"{\\\"action\\\": \\\"block\\\", \\\"message\\\": \\\"🚫 BLOCKED: Dangerous command detected: $cmd\\\"}\"; else echo \"{}\"; fi'",
+            "description": "Block dangerous bash commands"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'input=$(cat); prompt=$(echo \"$input\" | jq -r \".prompt // empty\" 2>/dev/null || echo \"$input\"); if [[ \"$prompt\" =~ (test|validate|check) ]] && [[ ! \"$prompt\" =~ (skip|no|without).*(test|validation) ]]; then echo \"💡 Reminder: Use claude validate to run comprehensive testing\" >&2; fi; echo \"{}\"'",
+            "description": "Remind about validation when testing mentioned"
+          }
+        ]
+      }
     ]
   },
   "tools": {

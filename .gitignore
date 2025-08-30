@@ -109,3 +109,7 @@ projects.local.json
 #
 # This ensures your foundation is portable but keeps sensitive info private.
 # =============================================================================
+# Projects and temporary directories
+TWP_website/
+projects/*/
+claude-best-practices/
