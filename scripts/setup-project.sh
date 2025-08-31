@@ -66,7 +66,9 @@ cd "$PROJECT_NAME"
 
 # Create .claude directory and subdirectories
 mkdir -p .claude/agents
-mkdir -p docs
+mkdir -p docs/stories
+mkdir -p docs/validation
+mkdir -p docs/templates
 
 echo "📁 Created directory structure"
 
@@ -88,13 +90,24 @@ cat > CLAUDE.md << 'EOF'
 - API Integration: @docs/api-integration.md
 - Testing Guide: @docs/testing-guide.md
 
+## BMAD Story-Driven Development
+- Stories Directory: @docs/stories/
+- Story Template: @docs/templates/story-template.md
+- Validation Checklists: @docs/validation/
+
 ## Quick Commands
+- Create Story: `claude create-story <feature-name>`
+- Validate Story: `claude validate-story <story-id>`
+- Plan Feature: `claude plan-feature <epic-name>`
+- BMAD Workflow: `claude bmad-workflow`
+
+## Development Commands  
 - Dev: `npm run dev` (or your dev command)
 - Test: `npm test` (or your test command)
 - Build: `npm run build` (or your build command)
 
 ---
-💡 **Update Current Sprint Goals weekly for better context**
+💡 **Follow BMAD story-driven development for complex features**
 EOF
 
 # Replace placeholder with actual project name
@@ -261,6 +274,108 @@ cat > docs/testing-guide.md << 'EOF'
 EOF
 
 echo "🧪 Created testing guide"
+
+# Create story template
+cat > docs/templates/story-template.md << 'EOF'
+# Story: [STORY_NAME]
+
+## Business Context
+**Problem Statement**: [What problem does this solve?]
+**Target User**: [Who will use this feature?]
+**Business Value**: [What value does this provide?]
+**Product Vision Alignment**: [How does this fit into the larger product vision?]
+
+## Technical Requirements
+
+### Functional Requirements
+- [ ] [Specific functionality requirement 1]
+- [ ] [Specific functionality requirement 2] 
+- [ ] [Specific functionality requirement 3]
+
+### Non-Functional Requirements
+- **Performance**: [Response time, throughput requirements]
+- **Security**: [Authentication, authorization, data protection needs]
+- **Scalability**: [Expected load, growth considerations]
+- **Accessibility**: [WCAG compliance, screen reader support]
+
+### Integration Requirements
+- **APIs**: [External services, internal APIs to integrate with]
+- **Data**: [Database changes, data migration needs]
+- **Dependencies**: [Other features or services this depends on]
+
+## Implementation Details
+
+### Technical Approach
+[Detailed description of the technical solution]
+
+### Key Components
+1. **[Component 1]**: [Purpose and functionality]
+2. **[Component 2]**: [Purpose and functionality]
+3. **[Component 3]**: [Purpose and functionality]
+
+### Data Flow
+[Describe how data moves through the system]
+
+### Error Handling
+- [Error scenario 1]: [How to handle]
+- [Error scenario 2]: [How to handle]
+- [Error scenario 3]: [How to handle]
+
+### Edge Cases
+- [Edge case 1]: [How to handle]
+- [Edge case 2]: [How to handle]
+
+## Definition of Done
+
+### Functional Completeness
+- [ ] All functional requirements implemented
+- [ ] User can complete the intended workflow
+- [ ] All error scenarios are handled gracefully
+- [ ] Edge cases are addressed
+
+### Quality Standards
+- [ ] Code follows project coding standards
+- [ ] Functions under 50 lines (foundation rule)
+- [ ] Files under 500 lines (foundation rule)
+- [ ] All inputs validated and sanitized
+- [ ] Proper error handling implemented
+
+### Testing Requirements
+- [ ] Unit tests written for all business logic
+- [ ] Integration tests cover the main user flow
+- [ ] Error scenarios are tested
+- [ ] Edge cases have test coverage
+- [ ] All tests pass
+
+### Security & Performance
+- [ ] Security review completed
+- [ ] Performance requirements met
+- [ ] No sensitive data exposed
+- [ ] Input validation implemented
+
+### Documentation
+- [ ] Code is properly documented
+- [ ] API documentation updated (if applicable)
+- [ ] User documentation updated (if needed)
+- [ ] README updated with new functionality
+
+## Dev Agent Record
+[This section is filled by the implementing developer/agent]
+
+### Implementation Log
+- **Start Date**: [Date]
+- **Approach Taken**: [Brief description of implementation approach]
+- **Key Decisions**: [Important technical decisions made]
+- **Challenges Encountered**: [Issues faced and how they were resolved]
+- **Testing Completed**: [Summary of testing done]
+- **Final Validation**: [Confirmation that all DoD items are met]
+- **Completion Date**: [Date]
+
+### Notes
+[Any additional notes about the implementation]
+EOF
+
+echo "📋 Created story template"
 
 # Create project settings
 cat > .claude/settings.json << 'EOF'

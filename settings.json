@@ -82,7 +82,11 @@
     "primer": "echo '=== PRIMER: Building Project Context ===' && tree -a -I 'node_modules|.git' && echo '=== Reading Key Files ===' && cat CLAUDE.md 2>/dev/null || echo 'No CLAUDE.md found' && cat README.md 2>/dev/null || echo 'No README.md found'",
     "validate": "echo '=== VALIDATION: Running All Checks ===' && (npm run lint 2>/dev/null || echo 'No lint script') && (npm run typecheck 2>/dev/null || echo 'No typecheck script') && (npm test 2>/dev/null || python -m pytest 2>/dev/null || echo 'No tests found') && echo '=== Validation Complete ==='",
     "security-scan": "echo '=== SECURITY SCAN ===' && (npm audit 2>/dev/null || echo 'No npm audit available') && rg -i 'password|secret|key|token' --type-not=md --type-not=json 2>/dev/null || echo 'No obvious secrets found'",
-    "fix-issue": "echo 'Usage: claude fix-issue <issue-number>' && echo 'This will fetch GitHub issue and create fix branch'"
+    "fix-issue": "echo 'Usage: claude fix-issue <issue-number>' && echo 'This will fetch GitHub issue and create fix branch'",
+    "create-story": "echo '=== CREATING STORY ===' && echo 'Call story-writer agent to create detailed implementation story'",
+    "validate-story": "echo '=== VALIDATING STORY ===' && echo 'Call product-owner agent to validate story completeness'",
+    "plan-feature": "echo '=== FEATURE PLANNING ===' && echo 'Story-driven planning workflow: 1. Create story 2. Validate requirements 3. Plan implementation'",
+    "bmad-workflow": "echo '=== BMAD DEVELOPMENT PROCESS ===' && echo '1. claude create-story <feature>' && echo '2. claude validate-story <story-id>' && echo '3. Implement with full story context' && echo '4. Validate with QA gates'"
   },
   "hooks": {
     "project-open": [
