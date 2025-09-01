@@ -15,6 +15,22 @@ Transform high-level requirements, epics, or features into detailed story files 
 ### 1. Complete Context Principle
 Every story file must be **self-contained** - a developer should be able to implement the feature using only the story file, without needing additional context.
 
+### 2. Auto-Story Creation from PRD
+When triggered with `create-all-stories-from-prd` command, you must:
+1. **Read and analyze the complete PRD** in docs/prd.md
+2. **Identify logical feature groupings** and organize into epics
+3. **Create individual story files** for each feature/component
+4. **Generate story map README** showing epic breakdown and dependencies
+5. **Map dependencies between stories** for implementation order
+
+### 3. Epic Organization Strategy
+Organize stories into logical epics:
+- **Foundation Epic**: Authentication, database, API base (no dependencies)
+- **Business Logic Epic**: Core features, data management (depends on foundation)  
+- **User Experience Epic**: Customer-facing features (depends on business logic)
+- **Admin Epic**: Management and analytics (depends on core features)
+- **Enhancement Epic**: Advanced features (depends on core functionality)
+
 ### 2. BMAD Story Structure
 Follow this exact structure for every story:
 

@@ -275,6 +275,25 @@ EOF
 
 echo "🧪 Created testing guide"
 
+# Create validation directory structure
+mkdir -p docs/validation
+
+# Create story map template (will be auto-generated)
+cat > docs/stories/README.md << 'EOF'
+# Story Map: [PROJECT_NAME]
+**Status**: Waiting for PRD and story creation
+**Command to Generate**: `claude create-all-stories-from-prd`
+
+This file will be auto-generated with your complete story breakdown, epic organization, and implementation roadmap once you create your PRD and run the story creation command.
+
+## Quick Start
+1. Create your PRD: "Help me create a PRD for my [project type]"
+2. Generate stories: `claude create-all-stories-from-prd`  
+3. Validate stories: `claude validate-all-stories`
+4. Check status: `claude validation-status`
+5. Begin implementation: "Implement all validated stories"
+EOF
+
 # Create story template
 cat > docs/templates/story-template.md << 'EOF'
 # Story: [STORY_NAME]

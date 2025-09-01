@@ -89,7 +89,15 @@
     "bmad-workflow": "echo '=== BMAD DEVELOPMENT PROCESS ===' && echo '1. claude create-story <feature>' && echo '2. claude validate-story <story-id>' && echo '3. Implement with full story context' && echo '4. Validate with QA gates'",
     "bmad-full-setup": "echo '=== INSTALLING FULL BMAD ===' && npx bmad-method install && echo 'Full BMAD system installed with 43 files and complete agent team'",
     "story-list": "echo '=== PROJECT STORIES ===' && ls docs/stories/ 2>/dev/null || echo 'No stories found - create one with: claude create-story <feature>'",
-    "story-status": "echo '=== STORY STATUS ===' && rg -l 'Dev Agent Record' docs/stories/ 2>/dev/null | wc -l | awk '{print \"Stories in progress: \" $1}' && rg -l 'Completion Date.*[0-9]' docs/stories/ 2>/dev/null | wc -l | awk '{print \"Completed stories: \" $1}'"
+    "story-status": "echo '=== STORY STATUS ===' && rg -l 'Dev Agent Record' docs/stories/ 2>/dev/null | wc -l | awk '{print \"Stories in progress: \" $1}' && rg -l 'Completion Date.*[0-9]' docs/stories/ 2>/dev/null | wc -l | awk '{print \"Completed stories: \" $1}'",
+    "create-all-stories-from-prd": "echo '=== AUTO-CREATING STORIES FROM PRD ===' && echo 'Analyzing PRD and creating comprehensive story breakdown with dependency mapping...'",
+    "validate-all-stories": "echo '=== VALIDATING ALL STORIES ===' && echo 'Running product-owner validation on all stories with organized reporting...'",
+    "validation-status": "echo '=== VALIDATION STATUS DASHBOARD ===' && echo 'Showing validation summary, story readiness, and next actions...'",
+    "validation-history": "echo '=== VALIDATION HISTORY: $1 ===' && echo 'Showing complete validation timeline for story: $1' && ls docs/validation/$1/ 2>/dev/null || echo 'No validation history found for story: $1'",
+    "story-map": "echo '=== STORY MAP & PRD BREAKDOWN ===' && cat docs/stories/README.md 2>/dev/null || echo 'Story map not found - run: claude create-all-stories-from-prd first'",
+    "implementation-status": "echo '=== IMPLEMENTATION STATUS ===' && echo 'Showing development progress across all stories and epics...'",
+    "epic-status": "echo '=== EPIC STATUS OVERVIEW ===' && echo 'Foundation | Business Logic | User Experience | Admin Features'",
+    "next-actions": "echo '=== RECOMMENDED NEXT ACTIONS ===' && echo 'Analyzing project state and suggesting next development steps...'"
   },
   "hooks": {
     "project-open": [
