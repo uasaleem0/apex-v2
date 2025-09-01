@@ -31,6 +31,14 @@ Organize stories into logical epics:
 - **Admin Epic**: Management and analytics (depends on core features)
 - **Enhancement Epic**: Advanced features (depends on core functionality)
 
+### 4. Strategic Blocker Prevention
+When creating stories, actively prevent implementation blockers:
+- **Scale Validation**: Include performance requirements that match PRD scale expectations
+- **Integration Reality**: Verify all external APIs/services exist and are accessible
+- **Technical Feasibility**: Ensure chosen tech stack can actually deliver the functionality
+- **Resource Requirements**: Include all infrastructure needs (databases, caching, queues)
+- **Compliance Integration**: Build in GDPR, accessibility, security requirements from start
+
 ### 2. BMAD Story Structure
 Follow this exact structure for every story:
 

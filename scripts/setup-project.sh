@@ -286,12 +286,22 @@ cat > docs/stories/README.md << 'EOF'
 
 This file will be auto-generated with your complete story breakdown, epic organization, and implementation roadmap once you create your PRD and run the story creation command.
 
-## Quick Start
+## 🚀 Enhanced Autonomous Workflow
 1. Create your PRD: "Help me create a PRD for my [project type]"
-2. Generate stories: `claude create-all-stories-from-prd`  
-3. Validate stories: `claude validate-all-stories`
-4. Check status: `claude validation-status`
-5. Begin implementation: "Implement all validated stories"
+2. Analyze project: `claude analyze`
+3. Select MCPs: `claude select-mcps`
+4. Generate stories: `claude create-all-stories-from-prd`  
+5. Strategic validation: `claude validate-strategic`
+6. Make decisions: `claude batch-decide`
+7. Check readiness: `claude check-ready`
+8. Auto-implement: `claude auto-implement`
+
+## 📋 Three-Tier Validation
+- **Level 1**: Auto-fixes applied silently
+- **Level 2**: Batch decisions collected upfront  
+- **Level 3**: Strategic blockers must be resolved
+
+Your project will use industry-specific MCPs for real-time validation and autonomous implementation.
 EOF
 
 # Create story template

@@ -97,7 +97,14 @@
     "story-map": "echo '=== STORY MAP & PRD BREAKDOWN ===' && cat docs/stories/README.md 2>/dev/null || echo 'Story map not found - run: claude create-all-stories-from-prd first'",
     "implementation-status": "echo '=== IMPLEMENTATION STATUS ===' && echo 'Showing development progress across all stories and epics...'",
     "epic-status": "echo '=== EPIC STATUS OVERVIEW ===' && echo 'Foundation | Business Logic | User Experience | Admin Features'",
-    "next-actions": "echo '=== RECOMMENDED NEXT ACTIONS ===' && echo 'Analyzing project state and suggesting next development steps...'"
+    "next-actions": "echo '=== RECOMMENDED NEXT ACTIONS ===' && echo 'Analyzing project state and suggesting next development steps...'",
+    "analyze": "echo '=== PROJECT ANALYSIS ===' && echo 'Analyzing PRD for industry, integrations, compliance needs, and strategic requirements...'",
+    "select-mcps": "echo '=== AUTO-MCP SELECTION ===' && echo 'Selecting appropriate MCPs based on project context and updating .mcp.json...'",
+    "validate-strategic": "echo '=== STRATEGIC VALIDATION ===' && echo 'Running comprehensive validation with real-time MCP data to catch implementation blockers...'",
+    "check-ready": "echo '=== IMPLEMENTATION READINESS ===' && echo 'Verifying all stories validated, decisions made, and system ready for autonomous implementation...'",
+    "auto-implement": "echo '=== AUTONOMOUS IMPLEMENTATION ===' && echo 'Starting hands-off implementation with progress logging and smart continuation...'",
+    "fix-auto": "echo '=== AUTO-FIX STORIES ===' && echo 'Applying standard security, accessibility, and best practices automatically...'",
+    "batch-decide": "echo '=== BATCH DECISIONS ===' && echo 'Collecting all UX and integration choices for single decision session...'"
   },
   "hooks": {
     "project-open": [

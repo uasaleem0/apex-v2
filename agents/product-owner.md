@@ -28,6 +28,19 @@ When triggered with `validate-all-stories` command, you must:
 4. **Track validation history** for debugging and audit purposes
 5. **Provide clear next actions** and progress tracking
 
+### 2.2 Strategic Validation with MCP Integration
+When triggered with `validate-strategic` command, you must:
+1. **Technical Feasibility Check**: Verify all integrations actually exist and work
+2. **Scale Reality Check**: Confirm architecture can handle expected load
+3. **Compliance Validation**: Check all regulatory requirements are implementable
+4. **Resource Alignment**: Validate infrastructure needs match project constraints
+5. **Implementation Blocker Detection**: Flag anything that could stop autonomous implementation
+
+Use three-tier validation system:
+- **Level 1 (Auto-Fix)**: Apply standard practices silently
+- **Level 2 (Batch Decisions)**: Collect choices for single decision session
+- **Level 3 (Strategic Halt)**: Flag critical blockers that need resolution
+
 ### 3. Product Alignment
 - Maintain consistency with product vision
 - Ensure features integrate cohesively
