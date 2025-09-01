@@ -106,32 +106,59 @@ src/
 - Implement proper CORS policies
 
 ## Foundation-Specific Commands
-- `claude new-project <name> <type>` - Create new project with full setup
+
+### Project Creation (Story-Driven by Default)
+- `claude new-project <name> <type>` - Create project with BMAD-Lite story-driven development
+- `claude bmad-full-setup` - Upgrade current project to full BMAD (43 files + complete agents)
 - `claude setup-tokens` - Interactive GitHub token configuration
 - `claude update-foundation` - Update global foundation settings
-- `./install-foundation.sh` - Install foundation on new PC
-- Common development commands defined in settings.json:
-  - `claude quick-commit "message"` - Add, commit with message
-  - `claude backup` - Auto backup with timestamp
-  - `claude sync` - Pull and push changes
-  - `claude status` - Git status + recent commits
+
+### Story-Driven Development (Default Workflow)
+- `claude create-story <feature>` - Create detailed implementation story
+- `claude validate-story <story-id>` - Validate story completeness and business alignment
+- `claude plan-feature <epic>` - Complete planning workflow from epic to stories
+- `claude story-list` - Show all project stories
+- `claude story-status` - Show story completion status
+
+### Quality & Validation
+- `claude validate` - Run comprehensive quality checks (lint, test, build, security)
+- `claude security-scan` - Scan for vulnerabilities and exposed secrets
+- `claude bmad-workflow` - Show complete story-driven development process
+
+### Git & Deployment
+- `claude quick-commit "message"` - Add, commit with message
+- `claude backup` - Auto backup with timestamp and push
+- `claude sync` - Pull and push changes
+- `claude status` - Git status + recent commit history
 
 ## Architecture Overview
-This foundation uses a two-repository strategy:
-- **Foundation repo** (`~/Claude/`): Global agents, settings, scripts
-- **Project repos** (`~/projects/`): Individual codebases with project-specific context
 
-### Available Global Agents
+### Story-Driven Development Foundation
+This foundation now uses **BMAD-Lite** as the default approach:
+- **Story-driven development** for ALL projects (eliminates context loss)
+- **Professional documentation** automatically generated  
+- **Systematic quality validation** at every step
+- **Choice of complexity**: BMAD-Lite (default) or Full BMAD (complex projects)
+
+### Two-Repository + Story Strategy
+- **Foundation repo** (`~/Claude/`): Global agents, settings, story templates, scripts
+- **Project repos** (`~/projects/`): Story files + implementation with complete context
+- **Full BMAD option**: Available when projects need enterprise-level structure
+
+### Available Global Agents (6 Total)
 - `general-debugger` - Cross-language debugging and error analysis
 - `performance-optimizer` - Algorithm and resource optimization
 - `security-analyzer` - Vulnerability analysis and OWASP compliance  
 - `test-generator` - Comprehensive test suite generation
+- `story-writer` - Creates detailed, self-contained story files with complete context
+- `product-owner` - Validates requirements alignment and story completeness
 
-### Project Creation Workflow
-1. `claude new-project <name> <type>` creates full structure
-2. Auto-generates documentation, agents, and settings
-3. Initializes Git repo and optionally creates GitHub repo
-4. Includes hooks for automated quality checks
+### Enhanced Project Creation Workflow
+1. `claude new-project <name> <type>` creates **story-driven project**
+2. Auto-generates **story structure, templates, and documentation**
+3. **BMAD-Lite agents** available for story creation and validation
+4. **Optional upgrade** to Full BMAD with `claude bmad-full-setup`
+5. Initializes Git repo with **automated quality gates and hooks**
 
 ## MCP Servers Configured
 - GitHub integration with personal access token
