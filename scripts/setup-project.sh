@@ -494,6 +494,24 @@ EOF
 
 echo "🔌 Created MCP configuration"
 
+# Create .env.example for MCP configuration
+cat > .env.example << 'EOF'
+# MCP Server Environment Variables
+# Copy this to .env and fill in your actual values
+
+# GitHub Integration (if using GitHub MCP)
+GITHUB_TOKEN=your_github_token_here
+
+# API Keys (will be auto-configured based on project type)
+# STRIPE_SECRET_KEY=your_stripe_key_here
+# OPENAI_API_KEY=your_openai_key_here
+# BRAVE_API_KEY=your_brave_search_key_here
+
+# Add other API keys as needed based on your project requirements
+EOF
+
+echo "🔑 Created .env.example template"
+
 # Create project-specific agents based on type
 if [ "$PROJECT_TYPE" = "react" ]; then
 # Create React-specific agents

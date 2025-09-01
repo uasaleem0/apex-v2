@@ -84,10 +84,12 @@
     "setup-project": "echo '=== COMPLETE PROJECT SETUP ===' && echo 'Starting comprehensive PRD interview, project analysis, MCP selection, and story creation...'",
     "status": "echo '=== PROJECT STATUS DASHBOARD ===' && echo 'Showing story readiness, validation status, and implementation progress...'",
     "validate": "echo '=== COMPREHENSIVE VALIDATION ===' && echo 'Running strategic validation with MCP integration, blocker detection, and readiness assessment...'",
-    "build": "echo '=== AUTONOMOUS IMPLEMENTATION ===' && echo 'Starting autonomous implementation with checkpointing and progress logging...'",
+    "build": "echo '=== AUTONOMOUS IMPLEMENTATION ===' && echo 'Starting autonomous implementation with checkpointing and progress logging. Use --resume to continue from checkpoint or --safe for frequent checkpoints.'",
     "map": "echo '=== STORY MAP & PROJECT BREAKDOWN ===' && cat docs/stories/README.md 2>/dev/null || echo 'Story map not found - run: claude setup-project first'",
     "fix": "echo '=== AUTO-FIX APPLICATION ===' && echo 'Applying standard security, accessibility, and performance fixes automatically...'",
-    "scan": "echo '=== SECURITY VULNERABILITY SCAN ===' && echo 'Running comprehensive security analysis and vulnerability detection...'"
+    "scan": "echo '=== SECURITY VULNERABILITY SCAN ===' && echo 'Running comprehensive security analysis and vulnerability detection...'",
+    "help": "echo '🚀 STREAMLINED AUTONOMOUS DEVELOPMENT' && echo '' && echo '4 Core Commands:' && echo '  claude setup-project  # Complete PRD → Stories → MCP setup' && echo '  claude status         # Story readiness dashboard' && echo '  claude validate       # Strategic validation & blocker detection' && echo '  claude build          # Autonomous implementation with checkpointing' && echo '' && echo 'Support Commands:' && echo '  claude map           # Visual story breakdown' && echo '  claude fix           # Manual fixes application' && echo '  claude scan          # Security vulnerability scan' && echo '' && echo 'Full Guide: cat commands/streamlined-workflow.md'",
+    "system-check": "echo '🔍 FOUNDATION SYSTEM CHECK' && echo '' && echo 'Checking foundation components...' && echo '✅ Agents:' && ls ~/Claude/agents/*.md 2>/dev/null | wc -l | awk '{print \"   \" $1 \" agents available\"}' && echo '✅ Commands:' && ls ~/Claude/commands/*.md 2>/dev/null | wc -l | awk '{print \"   \" $1 \" workflow guides\"}' && echo '✅ Settings: ~/Claude/settings.json' && echo '✅ Foundation ready for project creation'"
   },
   "hooks": {
     "project-open": [
