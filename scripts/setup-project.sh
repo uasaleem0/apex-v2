@@ -275,8 +275,9 @@ EOF
 
 echo "🧪 Created testing guide"
 
-# Create validation directory structure
+# Create validation and build logs directory structure
 mkdir -p docs/validation
+mkdir -p docs/build-logs
 
 # Create story map template (will be auto-generated)
 cat > docs/stories/README.md << 'EOF'
@@ -286,22 +287,24 @@ cat > docs/stories/README.md << 'EOF'
 
 This file will be auto-generated with your complete story breakdown, epic organization, and implementation roadmap once you create your PRD and run the story creation command.
 
-## 🚀 Enhanced Autonomous Workflow
-1. Create your PRD: "Help me create a PRD for my [project type]"
-2. Analyze project: `claude analyze`
-3. Select MCPs: `claude select-mcps`
-4. Generate stories: `claude create-all-stories-from-prd`  
-5. Strategic validation: `claude validate-strategic`
-6. Make decisions: `claude batch-decide`
-7. Check readiness: `claude check-ready`
-8. Auto-implement: `claude auto-implement`
+## 🚀 Streamlined Autonomous Workflow
+1. **Complete Setup**: `claude setup-project` - PRD interview, analysis, MCP selection, story creation
+2. **Check Status**: `claude status` - View story readiness and validation status  
+3. **Validate**: `claude validate` - Strategic validation with blocker detection
+4. **Build**: `claude build` - Autonomous implementation with checkpointing
+5. **Optional**: `claude map`, `claude fix`, `claude scan` - Additional tools
 
-## 📋 Three-Tier Validation
-- **Level 1**: Auto-fixes applied silently
-- **Level 2**: Batch decisions collected upfront  
-- **Level 3**: Strategic blockers must be resolved
+## 📋 Three-Tier Validation System
+- **Level 1**: Auto-fixes applied silently (security, accessibility, performance)
+- **Level 2**: Batch decisions collected upfront (UX choices, integrations)  
+- **Level 3**: Strategic blockers must be resolved (critical issues)
 
-Your project will use industry-specific MCPs for real-time validation and autonomous implementation.
+## 🔄 Checkpointing & Resume
+- Automatic checkpoints after each epic
+- Resume capability with `claude build --resume`
+- Complete progress logging in `docs/build-logs/`
+
+Your project uses industry-specific MCPs for real-time validation and truly autonomous implementation.
 EOF
 
 # Create story template

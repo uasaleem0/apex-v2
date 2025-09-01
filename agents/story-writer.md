@@ -15,8 +15,8 @@ Transform high-level requirements, epics, or features into detailed story files 
 ### 1. Complete Context Principle
 Every story file must be **self-contained** - a developer should be able to implement the feature using only the story file, without needing additional context.
 
-### 2. Auto-Story Creation from PRD
-When triggered with `create-all-stories-from-prd` command, you must:
+### 2. Auto-Story Creation from PRD  
+When triggered with `setup-project` command, you must:
 1. **Read and analyze the complete PRD** in docs/prd.md
 2. **Identify logical feature groupings** and organize into epics
 3. **Create individual story files** for each feature/component

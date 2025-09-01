@@ -113,17 +113,16 @@ src/
 - `claude setup-tokens` - Interactive GitHub token configuration
 - `claude update-foundation` - Update global foundation settings
 
-### Story-Driven Development (Default Workflow)
-- `claude create-story <feature>` - Create detailed implementation story
-- `claude validate-story <story-id>` - Validate story completeness and business alignment
-- `claude plan-feature <epic>` - Complete planning workflow from epic to stories
-- `claude story-list` - Show all project stories
-- `claude story-status` - Show story completion status
+### Streamlined Autonomous Development (Default Workflow)
+- `claude setup-project` - Complete PRD interview, analysis, MCP selection, and story creation
+- `claude status` - Story readiness dashboard and validation status
+- `claude validate` - Strategic validation with blocker detection and MCP integration
+- `claude build` - Autonomous implementation with checkpointing and progress logging
+- `claude map` - Visual story breakdown and epic organization
 
-### Quality & Validation
-- `claude validate` - Run comprehensive quality checks (lint, test, build, security)
-- `claude security-scan` - Scan for vulnerabilities and exposed secrets
-- `claude bmad-workflow` - Show complete story-driven development process
+### Quality & Validation  
+- `claude fix` - Apply standard security, accessibility, and performance fixes
+- `claude scan` - Security vulnerability scan and exposed secrets detection
 
 ### Git & Deployment
 - `claude quick-commit "message"` - Add, commit with message
@@ -145,20 +144,24 @@ This foundation now uses **BMAD-Lite** as the default approach:
 - **Project repos** (`~/projects/`): Story files + implementation with complete context
 - **Full BMAD option**: Available when projects need enterprise-level structure
 
-### Available Global Agents (6 Total)
+### Available Global Agents (10 Total)
 - `general-debugger` - Cross-language debugging and error analysis
 - `performance-optimizer` - Algorithm and resource optimization
 - `security-analyzer` - Vulnerability analysis and OWASP compliance  
 - `test-generator` - Comprehensive test suite generation
+- `documentation-manager` - Technical documentation and API docs
+- `validation-gates` - Quality gate enforcement
 - `story-writer` - Creates detailed, self-contained story files with complete context
 - `product-owner` - Validates requirements alignment and story completeness
+- `project-analyzer` - Industry analysis and MCP selection for strategic validation
+- `build-manager` - Autonomous implementation with checkpointing and session management
 
-### Enhanced Project Creation Workflow
-1. `claude new-project <name> <type>` creates **story-driven project**
-2. Auto-generates **story structure, templates, and documentation**
-3. **BMAD-Lite agents** available for story creation and validation
-4. **Optional upgrade** to Full BMAD with `claude bmad-full-setup`
-5. Initializes Git repo with **automated quality gates and hooks**
+### Enhanced Streamlined Workflow
+1. `claude new-project <name> <type>` creates **story-driven project structure**
+2. `claude setup-project` provides **complete PRD → Stories → MCP setup**
+3. `claude validate` runs **strategic validation with real-time blocker detection**
+4. `claude build` enables **autonomous implementation with checkpointing**
+5. **Optional upgrade** to Full BMAD with `claude bmad-full-setup`
 
 ## MCP Servers Configured
 - GitHub integration with personal access token
