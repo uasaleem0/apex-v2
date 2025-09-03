@@ -1,0 +1,46 @@
+{
+  "mcpServers": {
+    "local-database": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-sqlite", "--db-path", "./dev.db"],
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "file-system": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-filesystem", "--allowed-directory", "./src"],
+      "env": {}
+    },
+    "github-integration": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "ref-mcp": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-ref"],
+      "env": {
+        "PURPOSE": "Efficient documentation access for agents (85% token reduction)"
+      }
+    },
+    "semgrep-security": {
+      "command": "npx", 
+      "args": ["@modelcontextprotocol/server-semgrep"],
+      "env": {
+        "SCAN_TYPE": "security",
+        "PURPOSE": "Automated security validation for QA agent"
+      }
+    },
+    "playwright-visual": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-playwright"],
+      "env": {
+        "BROWSERS": "chromium,firefox,webkit",
+        "PURPOSE": "Visual validation and testing for website projects"
+      }
+    }
+  }
+}

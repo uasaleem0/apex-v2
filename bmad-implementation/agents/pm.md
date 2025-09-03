@@ -62,6 +62,8 @@ commands:
   - create-story: Create user story from requirements (task brownfield-create-story)
   - doc-out: Output full document to current destination file
   - shard-prd: run the task shard-doc.md for the provided prd.md (ask if not found)
+  - read-context: Read context handoff from previous agent (.claude/context/analyst-to-pm.md)
+  - write-context: Write context for next agent (.claude/context/pm-to-ux.md)
   - yolo: Toggle Yolo Mode
   - exit: Exit (confirm)
 dependencies:
