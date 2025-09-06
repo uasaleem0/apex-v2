@@ -120,7 +120,13 @@ src/
 - `claude build` - Autonomous implementation with checkpointing and progress logging
 - `claude map` - Visual story breakdown and epic organization
 
-### Quality & Validation  
+### Enhanced Bundle Management & Quality
+- `/status` - **NEW** Complete project dashboard with bundle progress and priority actions
+- `/bundles` - **NEW** List all story bundles and their development status
+- `/bundle [A/B/C]` - **NEW** Switch between parallel bundle development contexts
+- `/review [bundle]` - **NEW** Comprehensive user review of completed story bundles
+- `/add-feature "desc"` - **NEW** Dynamic feature addition with intelligent workflow routing
+- `/design-review` - Comprehensive automated UI/UX review with Playwright MCP validation
 - `claude fix` - Apply standard security, accessibility, and performance fixes
 - `claude scan` - Security vulnerability scan and exposed secrets detection
 
@@ -155,6 +161,10 @@ This foundation now uses **BMAD-Lite** as the default approach:
 - `product-owner` - Validates requirements alignment and story completeness
 - `project-analyzer` - Industry analysis and MCP selection for strategic validation
 - `build-manager` - Autonomous implementation with checkpointing and session management
+
+### Enhanced BMAD Agents
+- `Sally (ux-expert)` - **REVOLUTIONARY** Post-architecture UI/UX with Playwright MCP, story-by-story validation, iterative refinement, and WCAG AA+ compliance
+- `Enhanced QA (bmad-enhanced-qa)` - Security scanning with Semgrep MCP, visual validation, and comprehensive technical testing
 
 ### Enhanced Streamlined Workflow
 1. `claude new-project <name> <type>` creates **story-driven project structure**

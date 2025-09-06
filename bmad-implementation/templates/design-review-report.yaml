@@ -1,0 +1,231 @@
+# Design Review Report Template
+
+## Executive Summary
+**Project**: [Project Name]
+**Review Date**: [ISO 8601 DateTime]
+**Reviewer**: Sally (UX Expert with Playwright MCP)
+**Overall Score**: [0-100]/100
+
+### Quality Gate Status
+- [ ] **Deployment Ready** (Score ≥ 85, Critical Issues = 0)
+- [ ] **Requires Minor Fixes** (Score 70-84, Critical Issues ≤ 2)
+- [ ] **Major Remediation Needed** (Score < 70)
+
+## Component Scores
+
+### Visual Hierarchy: [0-100]/100 (Weight: 25%)
+**Typography**: [0-100]/100
+- Font scale consistency: [Pass/Fail]
+- Hierarchy clarity: [Pass/Fail]
+- Reading flow: [Pass/Fail]
+- Line height standards: [Pass/Fail]
+
+**Color System**: [0-100]/100
+- Contrast ratios (WCAG AA+): [Pass/Fail]
+- Brand consistency: [Pass/Fail]
+- Semantic color usage: [Pass/Fail]
+- Color blind accessibility: [Pass/Fail]
+
+**Spacing & Layout**: [0-100]/100
+- 8px grid system adherence: [Pass/Fail]
+- White space usage: [Pass/Fail]
+- Alignment consistency: [Pass/Fail]
+- Content density optimization: [Pass/Fail]
+
+### Interaction Design: [0-100]/100 (Weight: 30%)
+**UI States**: [0-100]/100
+- Default state clarity: [Pass/Fail]
+- Hover feedback: [Pass/Fail]
+- Focus indicators: [Pass/Fail]
+- Active/pressed states: [Pass/Fail]
+- Disabled state treatment: [Pass/Fail]
+- Loading state implementation: [Pass/Fail]
+
+**Navigation Patterns**: [0-100]/100
+- Primary navigation consistency: [Pass/Fail]
+- Secondary navigation utility: [Pass/Fail]
+- Breadcrumb implementation: [Pass/Fail]
+- Search functionality: [Pass/Fail]
+
+**Form Interactions**: [0-100]/100
+- Input field design: [Pass/Fail]
+- Validation feedback: [Pass/Fail]
+- Success states: [Pass/Fail]
+- Progressive disclosure: [Pass/Fail]
+
+### Responsive Design: [0-100]/100 (Weight: 20%)
+**Breakpoint Behavior**: [0-100]/100
+- Mobile first (320px+): [Pass/Fail]
+- Tablet adaptation (768px+): [Pass/Fail]
+- Desktop enhancement (1024px+): [Pass/Fail]
+- Large screen optimization (1440px+): [Pass/Fail]
+
+**Touch Interface**: [0-100]/100
+- Minimum touch targets (44px): [Pass/Fail]
+- Gesture support: [Pass/Fail]
+- Thumb zone optimization: [Pass/Fail]
+- Accidental touch prevention: [Pass/Fail]
+
+**Content Adaptation**: [0-100]/100
+- Text scaling (200% zoom): [Pass/Fail]
+- Image responsiveness: [Pass/Fail]
+- Navigation adaptation: [Pass/Fail]
+- Table responsiveness: [Pass/Fail]
+
+### Accessibility Compliance: [0-100]/100 (Weight: 15%)
+**WCAG 2.1 AA+ Standards**: [0-100]/100
+- Color contrast compliance: [Pass/Fail]
+- Keyboard navigation: [Pass/Fail]
+- Screen reader compatibility: [Pass/Fail]
+- Focus management: [Pass/Fail]
+
+**Inclusive Design**: [0-100]/100
+- Motor impairment support: [Pass/Fail]
+- Cognitive load management: [Pass/Fail]
+- Visual impairment accommodation: [Pass/Fail]
+- Hearing impairment consideration: [Pass/Fail]
+
+### Performance & Polish: [0-100]/100 (Weight: 10%)
+**Core Web Vitals**: [0-100]/100
+- Largest Contentful Paint: [value]s ([Pass/Fail] < 2.5s)
+- First Input Delay: [value]ms ([Pass/Fail] < 100ms)
+- Cumulative Layout Shift: [value] ([Pass/Fail] < 0.1)
+
+**Micro-Interactions**: [0-100]/100
+- Animation quality: [Pass/Fail]
+- Transition timing: [Pass/Fail]
+- Loading feedback: [Pass/Fail]
+- Error recovery: [Pass/Fail]
+
+## Issue Classification
+
+### Critical Issues (Deployment Blockers)
+```yaml
+critical_issues:
+  - issue: "[Description]"
+    impact: "[User impact description]"
+    location: "[Component/page location]"
+    screenshot: "[Path to screenshot]"
+    remediation: "[Specific fix required]"
+    effort_estimate: "[Hours/days]"
+```
+
+### High Priority Issues
+```yaml
+high_priority_issues:
+  - issue: "[Description]"
+    impact: "[User impact description]"
+    location: "[Component/page location]"
+    remediation: "[Specific fix required]"
+    effort_estimate: "[Hours/days]"
+```
+
+### Medium Priority Issues
+```yaml
+medium_priority_issues:
+  - issue: "[Description]"
+    improvement: "[Enhancement description]"
+    location: "[Component/page location]"
+    remediation: "[Recommended improvement]"
+    effort_estimate: "[Hours/days]"
+```
+
+## Playwright Test Results
+
+### Automated Test Summary
+- **Total Tests Run**: [number]
+- **Passed**: [number]
+- **Failed**: [number]
+- **Skipped**: [number]
+
+### Key Test Results
+```yaml
+accessibility_tests:
+  contrast_validation: [Pass/Fail]
+  keyboard_navigation: [Pass/Fail]
+  screen_reader_compatibility: [Pass/Fail]
+  responsive_accessibility: [Pass/Fail]
+
+responsive_tests:
+  mobile_breakpoints: [Pass/Fail]
+  tablet_breakpoints: [Pass/Fail]
+  desktop_breakpoints: [Pass/Fail]
+
+interaction_tests:
+  form_validation: [Pass/Fail]
+  navigation_flows: [Pass/Fail]
+  ui_state_changes: [Pass/Fail]
+```
+
+## Brand Alignment Assessment
+
+### Wisdom Practice Brand Compliance
+- **Color Palette Usage**: [Pass/Fail]
+  - Charcoal (#2C2C2C): [Correctly Applied/Issues Found]
+  - Rust (#B85450): [Correctly Applied/Issues Found]
+  - Beige (#F5E6D3): [Correctly Applied/Issues Found]
+  - Forest Green (#4A5D3A): [Correctly Applied/Issues Found]
+  - Muted Gold (#C9A961): [Correctly Applied/Issues Found]
+
+- **Typography Implementation**: [Pass/Fail]
+  - Inter font usage: [Pass/Fail]
+  - 16px minimum mobile: [Pass/Fail]
+  - System UI fallback: [Pass/Fail]
+
+- **Voice & Tone Alignment**: [Pass/Fail]
+  - Authentic messaging: [Pass/Fail]
+  - Direct communication: [Pass/Fail]
+  - Empowering language: [Pass/Fail]
+  - Grounded approach: [Pass/Fail]
+
+## Recommendations & Next Steps
+
+### Immediate Actions (This Sprint)
+1. **[Action Item]**
+   - Priority: Critical/High/Medium
+   - Effort: [Hours/Days]
+   - Owner: [Team member]
+   - Due: [Date]
+
+### Short-term Improvements (Next Sprint)
+1. **[Improvement Item]**
+   - Expected Impact: [User benefit]
+   - Effort: [Hours/Days]
+   - Dependencies: [If any]
+
+### Long-term Enhancements (Future Sprints)
+1. **[Enhancement Item]**
+   - Strategic Value: [Business benefit]
+   - Effort: [Hours/Days]
+   - Research Needed: [If any]
+
+## Self-Reflection Loop Results
+
+### Iterative Testing Outcomes
+- **Initial Score**: [0-100]/100
+- **Post-Fix Score**: [0-100]/100
+- **Improvement**: [+/-X] points
+
+### Key Learnings
+- **What Worked Well**: [Successful approaches]
+- **What Needs Improvement**: [Areas for enhancement]
+- **Process Refinements**: [Methodology improvements]
+
+## Validation & Sign-off
+
+### Quality Assurance
+- [ ] **Playwright Tests Passing**: All critical tests pass
+- [ ] **Manual Review Complete**: Expert validation finished
+- [ ] **Accessibility Verified**: WCAG AA+ compliance confirmed
+- [ ] **Performance Validated**: Core Web Vitals within thresholds
+- [ ] **Brand Consistency**: Guidelines adherence verified
+
+### Approval Status
+- [ ] **UX Expert Approval**: Sally (Design & User Experience)
+- [ ] **Technical Review**: [Architect/Lead Developer]
+- [ ] **Product Owner Sign-off**: Requirements satisfaction confirmed
+- [ ] **Deployment Authorization**: Ready for release
+
+**Review Completed By**: Sally (UX Expert)
+**Review Completion Date**: [ISO 8601 DateTime]
+**Next Review Scheduled**: [Date]

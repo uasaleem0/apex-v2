@@ -60,10 +60,11 @@ commands:
   - create-epic: Create epic for brownfield projects (task brownfield-create-epic)
   - create-prd: run task create-doc.md with template prd-tmpl.yaml
   - create-story: Create user story from requirements (task brownfield-create-story)
+  - add-feature: Create story from dynamic feature request and assess bundle placement
   - doc-out: Output full document to current destination file
   - shard-prd: run the task shard-doc.md for the provided prd.md (ask if not found)
   - read-context: Read context handoff from previous agent (.claude/context/analyst-to-pm.md)
-  - write-context: Write context for next agent (.claude/context/pm-to-ux.md)
+  - write-context: Write context for next agent (.claude/context/pm-to-architect.md)
   - yolo: Toggle Yolo Mode
   - exit: Exit (confirm)
 dependencies:
