@@ -20,7 +20,7 @@
 
 ### **Phase 2: Validation & Preparation**
 ```bash
-/status              # Purpose: Complete project dashboard with actionable insights
+/apex-status              # Purpose: Complete project dashboard with actionable insights
 claude validate      # Purpose: Strategic validation with blocker detection
 claude setup-project # Purpose: Complete PRD → Stories → MCP setup in one command
 ```
@@ -154,7 +154,7 @@ claude scan          # Purpose: Security vulnerability scan and secret detection
 
 ### **📊 Status & Monitoring**
 ```bash
-/status                        # Complete project dashboard with priority actions
+/apex-status                        # Complete project dashboard with priority actions
 /bundles                      # List all story bundles and their development status
 /bundle [A/B/C]              # Switch between parallel bundle development contexts
 /agents                      # Active agent status and current capabilities
@@ -187,8 +187,7 @@ claude scan          # Purpose: Security vulnerability scan and secret detection
 
 ### **🚀 Project Creation & Setup**
 ```bash
-claude new-project <name> <type>     # Create project with BMAD-Lite story-driven development
-claude bmad-full-setup              # Upgrade current project to full BMAD system  
+claude new-project <name> <type>     # Create project with APEX story-driven development
 claude setup-tokens                 # Interactive GitHub token configuration
 claude update-foundation            # Update global foundation settings
 claude setup-project               # Complete PRD → Stories → MCP setup in one command
@@ -302,7 +301,7 @@ claude validate                       # Strategic validation with comprehensive 
 
 ### **📈 System Health**
 ```bash
-/status                              # Complete project dashboard with health indicators
+/apex-status                              # Complete project dashboard with health indicators
 /agents                             # Active agent status and system capabilities
 claude scan                         # Security and compliance health check
 ```
@@ -317,7 +316,7 @@ claude scan                         # Security and compliance health check
 claude build                       # Build Bundle A
 /bundle B                          # Switch to Bundle B (Business Logic)  
 claude validate                    # Validate Bundle B readiness
-/status                           # Monitor progress across all bundles
+/apex-status                           # Monitor progress across all bundles
 ```
 
 ### **🔄 Iterative Refinement**
@@ -333,7 +332,7 @@ claude validate                    # Validate Bundle B readiness
 ```bash
 /add-feature "user profile customization"    # Add feature anytime
 /feature-status                              # Check feature routing
-/status                                     # See updated project status
+/apex-status                                     # See updated project status
 ```
 
 ---
@@ -368,7 +367,7 @@ claude validate                    # Validate Bundle B readiness
 
 **🎯 This reference covers ALL Enhanced BMAD capabilities across discovery, planning, architecture, UI/UX, development, quality assurance, and deployment phases.**
 
-**🚀 Start with `/status` to see your project dashboard and begin your Enhanced BMAD journey!**
+**🚀 Start with `/apex-status` to see your project dashboard and begin your Enhanced BMAD journey!**
 
 ---
 **Enhanced BMAD System v2.0 - Complete Command Reference**  

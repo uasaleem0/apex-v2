@@ -63,17 +63,17 @@ Based on `greenfield-fullstack.yaml`:
 # Load dev agent
 @dev
 # For each story:
-bmad resume <story-id>          # Resume from checkpoint
+# DEPRECATED: Use claude build --resume <story-id>          # Resume from checkpoint
 # Implement story features
-bmad checkpoint <story-id>      # Save progress periodically
+# DEPRECATED: Use claude build (has automatic checkpointing) <story-id>      # Save progress periodically
 bmad validate <story-id>        # Validate at milestones
 ```
 
 ## Enhanced Checkpoint Commands
 ```bash
-bmad checkpoint <story-id>      # Manual checkpoint (50 tokens)
+# DEPRECATED: Use claude build (has automatic checkpointing) <story-id>      # Manual checkpoint (50 tokens)
 bmad status <story-id>          # Story status (30 tokens)
-bmad resume <story-id>          # Resume from checkpoint
+# DEPRECATED: Use claude build --resume <story-id>          # Resume from checkpoint
 bmad validate <story-id>        # Validation check (40 tokens)
 bmad project-status            # Overall status (20 tokens)
 bmad story-health <story-id>    # Health check
