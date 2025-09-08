@@ -1,4 +1,28 @@
 # My Personal Claude Code Configuration
+## 🚀 APEX System Startup (CRITICAL INSTRUCTIONS)
+**When user says "cd to APEX", "start APEX", "navigate to APEX", or "cd /users/Claude":**
+
+1. **ALWAYS run this command immediately - NO PATH SEARCHING:**
+   ```bash
+   ./Claude/apex-startup.sh
+   ```
+
+2. **This will:**
+   - Display the APEX banner/logo with ASCII art
+   - Initialize the APEX environment properly
+   - Show available commands (@analyst, @pm, @architect, claude build, /apex-status)
+   - Put you in the correct APEX working directory
+
+3. **NEVER:**
+   - Search for paths with `find` or `ls` first
+   - Try different directory combinations
+   - Guess at file locations
+   - Navigate manually with `cd` commands before running startup
+### Available APEX Commands & Agents
+- **Agent Commands**: @analyst, @pm, @architect, @ux-expert, @build-manager
+- **Bundle Management**: /status, /bundles, /bundle [A/B/C], /review [bundle]
+- **Feature Commands**: /add-feature "desc", /design-review
+- **Foundation Commands**: claude build, claude validate, claude setup-project
 
 ## 🔥 10 Hard Rules (Never Break These)
 
@@ -53,6 +77,24 @@
 - Prefer specific file searches over broad exploration
 - Run tests after significant changes
 - Use specialized subagents for different task types
+
+### 🚨 CRITICAL: File Path Handling (NEVER FORGET THIS)
+**Environment**: Windows with MSYS2/Git Bash - Path format matters for tools vs bash!
+
+**Read & Edit Tools Path Requirements:**
+- ✅ **USE**: `C:\Users\User\Claude\CLAUDE.md` (Windows format)
+- ✅ **USE**: `Claude\CLAUDE.md` (relative path)
+- ❌ **NEVER**: `/c/Users/User/Claude/CLAUDE.md` (Unix format - WILL FAIL)
+
+**Bash Commands:**
+- ✅ All formats work (bash handles path translation)
+
+**Why This Matters:**
+- Unix paths (`/c/...`) cause "File does not exist" errors in Read/Edit tools
+- This forces workarounds with `cat`, `sed`, etc. - wastes time
+- Windows paths (`C:\...`) or relative paths work perfectly in tools
+
+**Rule**: When using Read/Edit tools, ALWAYS use Windows format or relative paths
 
 ## 🏗️ Architecture Standards
 
@@ -134,7 +176,6 @@ src/
 - `claude quick-commit "message"` - Add, commit with message
 - `claude backup` - Auto backup with timestamp and push
 - `claude sync` - Pull and push changes
-- `claude status` - Git status + recent commit history
 
 ## Architecture Overview
 
@@ -185,3 +226,18 @@ This configuration applies to ALL my projects. Project-specific instructions sho
 ---
 **Location**: `C:\Users\User\Claude\` - My personal Claude Code setup
 **System Files**: `C:\Users\User\Claude-Installation-DO-NOT-EDIT\` - Claude Code system (don't modify)
+
+## 📁 Universal Folder Structure
+
+### Data Location Rules
+- **Company Data**: `uasaleem-companies/companies/[company-name]/`
+  - Brand guidelines, target audiences, value propositions, business strategy
+  - Always check here first for any company-specific information
+- **Project Implementation**: `[project-name]/` or `projects/[project-name]/`
+  - PRDs, architecture, code implementation, documentation
+
+### Context Discovery Process
+1. **For company info**: Look in `uasaleem-companies/companies/[company-name]/`
+2. **For project work**: Look in `[project-name]/` (root level) or `projects/[project-name]/`
+3. **For APEX commands**: Use `/status`, `@analyst`, etc.
+

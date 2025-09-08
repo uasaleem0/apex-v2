@@ -1,0 +1,7 @@
+#!/bin/bash
+# APEX Note Command - Direct executable
+# Usage: ./apex-note "your observation"
+
+cd "$(dirname "$0")"
+./scripts/apex-note-logger.sh "$1"
+echo "📝 APEX Note logged: $(echo "$1" | cut -c1-50)..."

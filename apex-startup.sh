@@ -2,7 +2,7 @@
 # APEX System Startup Banner
 # Run this when entering APEX directory: source apex-startup.sh
 
-clear
+# Clear screen removed - was causing display issues
 echo ""
 echo "     █████╗ ██████╗ ███████╗██╗  ██╗"
 echo "    ██╔══██╗██╔══██╗██╔════╝╚██╗██╔╝"
