@@ -66,6 +66,12 @@ apex_menu() {
 
 # Main execution
 show_banner
+
+# Optional: Auto-start monitoring
+if [ -f "apex-implementation/utils/monitor-hooks.sh" ]; then
+    source apex-implementation/utils/monitor-hooks.sh
+fi
+
 echo "Type 'm' for interactive menu or use commands directly:"
 echo "Direct commands: @analyst @pm @architect claude build /status"
 echo ""
