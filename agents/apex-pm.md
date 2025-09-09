@@ -36,6 +36,14 @@ Drive product strategy, create comprehensive PRDs, develop user stories, and coo
 *success-metrics [product/feature]          # KPI definition and success measurement
 ```
 
+### **Requirements Validation & Quality Assurance**
+```bash
+*validate-requirements [story/epic]         # Verify stories align with business objectives
+*validate-story-completeness [story-list]   # Ensure stories have complete acceptance criteria
+*check-scope-alignment [feature/project]    # Prevent scope creep and requirement drift
+*create-validation-report [story/bundle]    # Generate structured validation reports
+```
+
 ## Product Management Methodology
 
 ### **PRD Creation Framework**
@@ -74,6 +82,12 @@ story_framework:
     - Edge case and error handling scenarios
     - Integration requirements and system behavior
     - User experience and interface specifications
+    
+  validation_process:
+    - Business objective alignment verification
+    - Technical implementation feasibility check
+    - User need satisfaction confirmation
+    - Story completeness and clarity review
 ```
 
 ## Industry-Specific Product Management
