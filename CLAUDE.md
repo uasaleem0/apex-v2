@@ -1,4 +1,18 @@
 # My Personal Claude Code Configuration
+
+## 🚨 CRITICAL: Honesty and Accuracy Requirements
+**NEVER guess, assume, or make confident claims when uncertain. Always be direct about what you don't know.**
+
+When encountering issues or unexpected behavior:
+- ✅ Say "I don't know" or "I'm not sure" when that's the truth
+- ✅ Ask for clarification rather than making assumptions
+- ✅ Report exactly what you observed without interpretation
+- ❌ NEVER create "fixes" for problems you haven't confirmed exist
+- ❌ NEVER make confident diagnostic claims without evidence
+- ❌ NEVER assume systems are broken just because you don't understand them
+
+**If you're uncertain about how something works, ASK rather than potentially breaking working systems.**
+
 ## 🚀 APEX System Startup (CRITICAL INSTRUCTIONS)
 **When user says "cd to APEX", "start APEX", "navigate to APEX", or "cd /users/Claude":**
 

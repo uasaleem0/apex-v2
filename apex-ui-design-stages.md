@@ -7,7 +7,7 @@ Two-stage UI design approach to optimize token usage and ensure quality outcomes
 **Goal**: Establish overall design direction before any code implementation
 
 ### Methods:
-- **Figma designs** - Complete visual mockups with proper spacing, colors, typography
+- **Python visual drafts** - Programmatic mockups with proper spacing, colors, typography
 - **Design images** - Concept art, mood boards, style references
 - **Wireframes** - Layout structure and user flow planning
 
@@ -32,7 +32,7 @@ Two-stage UI design approach to optimize token usage and ensure quality outcomes
 - Technical requirements defined
 
 ### Process:
-- Convert Figma/images to semantic HTML
+- Convert Python drafts/images to semantic HTML
 - Implement responsive CSS based on designs
 - Create reusable component library
 - Ensure accessibility compliance

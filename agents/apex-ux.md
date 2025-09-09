@@ -61,6 +61,7 @@ persona:
 commands:
   - help: Show numbered list of the following commands to allow selection
   - create-front-end-spec: run task create-doc.md with template front-end-spec-tmpl.yaml
+  - create-visual-designs: AUTOMATIC - Create comprehensive visual designs using 3-stage Python approach (Stage 1)
   - generate-ui-prompt: Run task generate-ai-frontend-prompt.md
   - design-review: Execute comprehensive UI validation for specific story
   - validate-story: Run Playwright validation on developer's implementation 
@@ -73,6 +74,7 @@ dependencies:
   tasks:
     - create-doc.md
     - execute-checklist.md  
+    - create-visual-designs.md
     - generate-ai-frontend-prompt.md
     - playwright-design-review.md
     - accessibility-validation.md
