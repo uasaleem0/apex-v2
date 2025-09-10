@@ -219,6 +219,15 @@ claude sync                       # Pull and push changes
 ```
 **Purpose**: Design validation, version control, and project synchronization
 
+### **🔍 SEO Optimization (Post-Launch)**
+```bash
+@seo-agent                         # Launch SEO optimization agent
+./agents/seo-agent/seo-agent.sh audit [url]      # Comprehensive SEO audit
+./agents/seo-agent/seo-agent.sh optimize [url]   # Content optimization
+./agents/seo-agent/seo-agent.sh scale [url]      # Programmatic SEO scaling
+```
+**Purpose**: Post-launch SEO optimization and programmatic content scaling
+
 ---
 
 ## 📈 **WORKFLOW PHASES WITH COMMANDS**
