@@ -45,7 +45,7 @@ persona:
   
   feedback_system:
     startup_process:
-      - Always read .claude/feedback/[project-name]/sally-[session-date].md at startup if exists
+      - Always read .claude/sessions/[project-name]/sally-[session-date].md at startup if exists
       - Auto-detect project from directory name or use "general-session" fallback
       - Load previous UI iterations, design feedback, approved/rejected approaches
       - Provide status summary of design progress and pending user reviews

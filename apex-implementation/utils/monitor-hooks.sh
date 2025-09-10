@@ -15,9 +15,11 @@ apex_monitored_cmd() {
     
     local end_time=$(date +%s%3N)
     
-    # Send metrics to monitor (if running)
-    if pgrep -f "apex-monitor.js" > /dev/null; then
-        node "$MONITOR_SCRIPT" log-command "$cmd" "$start_time" "$end_time" "$exit_code" 2>/dev/null
+    # Send metrics to monitor (if running) - Windows compatible
+    if ps aux 2>/dev/null | grep -q "apex-monitor.js" || tasklist 2>/dev/null | grep -q "node.exe"; then
+        if [[ -f "$MONITOR_SCRIPT" ]]; then
+            node "$MONITOR_SCRIPT" log-command "$cmd" "$start_time" "$end_time" "$exit_code" 2>/dev/null || true
+        fi
     fi
     
     return $exit_code
@@ -33,7 +35,7 @@ apex_agent() {
     local result=$?
     
     # Log workflow step
-    if pgrep -f "apex-monitor.js" > /dev/null; then
+    if ps aux 2>/dev/null | grep -q "apex-monitor.js" > /dev/null; then
         node "$MONITOR_SCRIPT" log-workflow "agent-execution" "$agent" $([ $result -eq 0 ] && echo "true" || echo "false") 2>/dev/null
     fi
     
@@ -54,7 +56,7 @@ apex_cmd_with_scan() {
     echo "$output"
     
     # Scan output for patterns (if monitor running)
-    if pgrep -f "apex-monitor.js" > /dev/null; then
+    if ps aux 2>/dev/null | grep -q "apex-monitor.js" > /dev/null; then
         echo "$output" | node "$MONITOR_SCRIPT" scan-output 2>/dev/null
     fi
     
@@ -63,7 +65,7 @@ apex_cmd_with_scan() {
 
 # Auto-start monitoring when sourcing this file
 apex_start_monitoring() {
-    if ! pgrep -f "apex-monitor.js" > /dev/null; then
+    if ! ps aux 2>/dev/null | grep -q "apex-monitor.js" > /dev/null; then
         nohup node "$MONITOR_SCRIPT" start > /dev/null 2>&1 &
         sleep 1  # Give it time to start
     fi
@@ -71,7 +73,7 @@ apex_start_monitoring() {
 
 # Auto-stop monitoring on shell exit
 apex_stop_monitoring() {
-    if pgrep -f "apex-monitor.js" > /dev/null; then
+    if ps aux 2>/dev/null | grep -q "apex-monitor.js" > /dev/null; then
         node "$MONITOR_SCRIPT" stop 2>/dev/null
     fi
 }
@@ -88,4 +90,4 @@ alias git='apex_monitored_cmd git'
 # Start monitoring automatically
 apex_start_monitoring
 
-echo "APEX monitoring hooks loaded. Monitor: $(pgrep -f 'apex-monitor.js' > /dev/null && echo 'Active' || echo 'Inactive')"
+echo "APEX monitoring hooks loaded. Monitor: $(ps aux 2>/dev/null | grep -q 'apex-monitor.js' && echo 'Active' || echo 'Inactive')"

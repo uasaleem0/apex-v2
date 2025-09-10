@@ -76,6 +76,46 @@ echo "Type 'm' for interactive menu or use commands directly:"
 echo "Direct commands: @analyst @pm @architect claude build /status"
 echo ""
 
-# Optional: Auto-show menu on 'm' input
+# Register all APEX agent commands
+setup_agent_commands() {
+    local apex_dir="$(pwd)"
+    
+    # Core agent commands using robust launcher
+    alias @analyst="'$apex_dir/launch-agent.sh' apex-analyst"
+    alias @pm="'$apex_dir/launch-agent.sh' apex-pm" 
+    alias @architect="'$apex_dir/launch-agent.sh' apex-architect"
+    alias @ux-expert="'$apex_dir/launch-agent.sh' apex-ux"
+    alias @build-manager="'$apex_dir/launch-agent.sh' build-manager"
+    
+    # Alternative commands without @
+    alias analyst="@analyst"
+    alias pm="@pm"
+    alias architect="@architect"
+    alias ux-expert="@ux-expert"
+    alias build-manager="@build-manager"
+    
+    # Status and utility commands (functions instead of aliases for special chars)
+    apex_status() { cd "$apex_dir" && echo "📊 Project Status Dashboard" && echo "Project: $(basename "$PWD")" && ls -la docs/ 2>/dev/null || echo "No docs/ directory found"; }
+    apex_bundles() { cd "$apex_dir" && echo "📦 Bundle Management" && ls -la docs/stories/ 2>/dev/null || echo "No stories/ directory found"; }
+    
+    # Create functions for slash commands
+    alias status='apex_status'
+    alias bundles='apex_bundles'
+    
+    # Export for global access
+    export APEX_HOME="$apex_dir"
+    export PATH="$APEX_HOME:$PATH"
+}
+
+# Check if we're in the right directory
+if [[ "$(basename "$PWD")" == "Claude" ]] || [[ -f "apex-startup.sh" ]]; then
+    setup_agent_commands
+    echo "✅ APEX agent commands registered successfully"
+    echo "✅ Available: @analyst, @pm, @architect, @ux-expert, @build-manager"
+else
+    echo "⚠️  Warning: Run this script from the APEX directory (/c/Users/User/Claude)"
+fi
+
+# Menu aliases
 alias m='apex_menu'
 alias menu='apex_menu'

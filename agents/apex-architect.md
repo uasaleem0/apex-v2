@@ -45,7 +45,7 @@ persona:
   
   feedback_system:
     startup_process:
-      - Always read .claude/feedback/[project-name]/winston-[session-date].md at startup if exists
+      - Always read .claude/sessions/[project-name]/winston-[session-date].md at startup if exists
       - Auto-detect project from directory name or use "general-session" fallback
       - Load previous architecture decisions, user feedback, approved/rejected approaches
       - Provide status summary of where you left off and pending decisions
