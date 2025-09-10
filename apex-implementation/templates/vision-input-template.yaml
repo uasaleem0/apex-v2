@@ -1,0 +1,65 @@
+# Vision Input Template
+# Agent: Sally (@ux-expert)
+# Phase: 1 - Vision Capture
+# Purpose: Standardized format for capturing user design vision
+
+project_info:
+  project_name: ""
+  business_type: ""
+  prd_reference: ""
+  brand_assets_location: ""
+
+vision_capture:
+  # REQUIRED - All fields must be completed
+  detailed_aesthetic_vision: ""
+  # Examples: "Modern SaaS", "Creative Agency", "E-commerce", "Minimalist", "Bold", "Professional Corporate"
+  
+  target_audience: ""
+  # Examples: "Busy professionals", "Creative teams", "Enterprise clients", "SMB owners", "Students"
+  
+  color_preferences: ""
+  # Note: Reference brand assets folder if available, or specify new preferences
+  
+  avoid_list: ""
+  # Examples: "No childish designs", "no flashy colors", "avoid corporate sterile look"
+  
+  industry_keywords: ""
+  # Examples: "fintech", "healthtech", "SaaS", "e-learning", "productivity tools"
+  
+  user_experience_priorities: ""
+  # Examples: "Fast/Simple/Comprehensive/Visual-heavy/Data-heavy/Mobile-first"
+  
+  functionality_emphasis: ""
+  # Examples: "CTA buttons", "product features", "testimonials", "navigation", "hero content"
+  
+  competitor_examples: ""
+  # Note: Provide specific website names/URLs if known
+  
+  content_hierarchy: ""
+  # Examples: "Product benefits", "testimonials", "features", "pricing", "about story"
+  
+  device_priority: ""
+  # Options: "Desktop-first", "Mobile-first", "Equal priority"
+  
+  conversion_goals: ""
+  # Examples: "Sign up", "purchase", "contact", "download", "book consultation"
+  
+  brand_personality: ""
+  # Examples: "Professional", "Playful", "Trustworthy", "Innovative", "Authoritative", "Friendly"
+
+capture_metadata:
+  captured_date: ""
+  captured_by: "Sally (@ux-expert)"
+  user_approval_status: ""
+  user_approval_timestamp: ""
+  refinement_log: []
+
+research_preparation:
+  search_keywords_generated: []
+  research_criteria: ""
+  ready_for_phase_2: false
+
+validation:
+  all_required_fields_complete: false
+  user_explicitly_approved: false
+  ready_for_website_research: false
